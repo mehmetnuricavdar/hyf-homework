@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEFCF5;
+    color: #AC7134;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    padding: 5% 15%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0% 10%;
+}
+
+img {
+    width: 35%;
+    border-radius: 5%;
+}
+
+.name {
+    font-size: 100%;
+    text-align: center;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    white-space: nowrap;
+    padding: 1%;
+
+}
+
+i {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+i:hover {
+    font-size: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dropbtn {
+    background-color: #FEFCF5;
+    color: #AC7134;
+    padding: 16px;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 250px;
+    box-shadow: 0px 0px 16px 0px rgba(62, 37, 37, 0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    font-size: 18px;
+}
+
+hr {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    border-width: 1px;
+    border-color: #B47E44;
+}
+
+details {
+    padding: 1%;
+    text-align: center;
+}
+
+p {
+    text-indent: 50px;
+}
+
+summary {
+    font-size: larger;
+    cursor: pointer;
+    padding-bottom: 1%;
+}
+
+h3 {
+    font-weight: bolder;
+    text-align: left;
+}
+
+h4 {
+    font-weight: lighter;
+    text-align: left;
+    padding-bottom: 1%;
+}
+
+ul,
+p {
+    padding: 1% 2%;
+    color: #764D23;
+    text-align: justify;
+}
+
+summary:hover {
+    font-size: x-large;
+}
+
+li {
+    padding: 0.5%;
+}
+
+#myDIV {
+    height: 300px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 10px;
+    grid-column-gap: 100px;
+}
