@@ -32,6 +32,9 @@ header {
     margin-bottom: 1rem;
 }
 
+.header-nav li{
+    margin: 1rem;
+}
 
 .header-nav a {
     color: #000101;
