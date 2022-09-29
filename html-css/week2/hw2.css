@@ -17,10 +17,10 @@ header {
 
 
 .header-nav {
-    /* padding: 1rem 11rem; */
     position: sticky;
     top: 0;
     background-color: #fff;
+    box-shadow: 1px 2px #7D7D7D;
 }
 
 .header-nav ul {
