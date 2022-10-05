@@ -1,0 +1,541 @@
+/* ========Universal CSS ============= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======== Main CSS ============= */
+body {
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  width: 100%;
+  font-size: 12px;
+  color: #000;
+}
+
+nav img {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: rgb(29, 29, 31);
+  width: 100%;
+  height: fit-content;
+  position: sticky;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 0 0.5rem;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(245, 245, 247, 0.7);
+}
+
+i {
+  margin-left: 0.4rem;
+  font-size: 2px;
+  color: #0071e3;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+header a:hover {
+  color: #fff;
+  transition: 0.3s;
+}
+
+section {
+  margin: 2rem 1rem;
+}
+
+h1 {
+  font-size: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  margin: 2rem 0;
+  font-size: 12px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 16px;
+}
+
+/* ========= Progress bar styling ==========*/
+progress {
+  width: 100%;
+  border: 0;
+  height: 2.5rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
+progress::-webkit-progress-bar {
+  width: 100%;
+  border: 0;
+  height: 2.5rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
+progress::-webkit-progress-value {
+  width: 100%;
+  border: 0;
+  height: 2.5rem;
+  border-radius: 12px;
+  background-color: rgb(29, 29, 31);
+  margin-top: 0.5rem;
+}
+
+progress::-moz-progress-bar {
+  border: 0;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
+/* ========= input elements styling ==========*/
+
+input[type="text"],
+[type="number"],
+[type="email"],
+[type="password"],
+[type="button"],
+[type="tel"] {
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  height: 3rem;
+  border-color: #d2d2d7;
+  width: 100%;
+  font-size: 10px;
+  background-color: #f6f6f6;
+}
+
+/* ========= Placeholder styling ==========*/
+
+::placeholder {
+  padding-left: 1rem;
+}
+
+/* ========= labels styling ==========*/
+
+.name label,
+.address label,
+.address-text label,
+.contact label,
+.password label,
+.page-four label {
+  display: none;
+}
+
+/* =========################ Page 1 CSS ################============= */
+
+.page-one fieldset,
+.page-two fieldset {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.page-one div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+select {
+  font-size: 11px;
+  width: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  height: 3rem;
+  border-color: #d2d2d7;
+  color: rgb(135, 131, 131);
+  padding-left: 1rem;
+  background-color: #f6f6f6;
+}
+
+.profil-desc div {
+  flex-direction: column;
+}
+
+.profil-desc p {
+  margin: 1rem 0;
+  font-size: 12px;
+}
+
+textarea {
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  height: 7rem;
+  background-color: #f6f6f6;
+  border-color: #d2d2d7;
+}
+
+.shipping-address div {
+  height: 20px;
+  justify-content: flex-start;
+}
+
+.shipping-address p {
+  margin: 0 0 0.5rem 0;
+  font-size: 12px;
+}
+
+.shipping-address input {
+  width: min-content;
+  margin-left: 0.5rem;
+}
+
+/* ========################ Next button CSS ################============= */
+
+.next {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.next input {
+  background-color: #06c;
+  color: rgba(245, 245, 247);
+  border-radius: 12px;
+  width: 20%;
+  border-style: none;
+  height: 3rem;
+}
+
+.next input:hover {
+  background-color: #0071e3;
+}
+
+/* ========################ Page 2 CSS ################============= */
+
+.page-two div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.newsletter {
+  margin: 10px 0;
+}
+
+.newsletter input[type="radio"],
+.payment-shape input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.newsletter label,
+.payment-shape label {
+  display: inline-block;
+  background-color: #f6f6f6;
+  padding: 1rem;
+  border: 2px solid #d2d2d7;
+  border-radius: 12px;
+  text-align: center;
+  width: 35%;
+}
+
+.newsletter label {
+  font-size: 12px;
+}
+
+.newsletter label:hover {
+  background-color: rgb(113, 180, 246);
+}
+
+.newsletter input[type="radio"]:checked + label,
+.payment-shape input[type="radio"]:checked + label {
+  background-color: rgb(80, 156, 233);
+  border-color: #06c;
+}
+
+/* ========################ Page 3 CSS ################============= */
+
+.page-three fieldset {
+  margin: 1rem;
+  border: none;
+}
+
+.page-three p {
+  margin: 1rem;
+}
+
+.category {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.page-three div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.page-three .images label {
+  width: 120px;
+  height: 120px;
+}
+
+.images img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 5px solid black;
+}
+
+.images div {
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  margin-right: 1rem;
+}
+
+fieldset.images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.next {
+  display: flex;
+}
+
+/* ========################ Page 4 CSS ################============= */
+
+.page-four fieldset {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.divider {
+  border: 3px solid #3b3b4f;
+  margin-bottom: 1rem;
+}
+
+.order-summary p {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-summary h3 {
+  text-align: right;
+  font-size: 18px;
+}
+
+.page-four h2 {
+  font-size: 18px;
+}
+
+.payment-shape label {
+  font-size: 16px;
+}
+
+.payment-method fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: none;
+}
+
+.page-four div {
+  margin-bottom: 1rem;
+}
+
+.payment-method fieldset input,
+.date-cvv input {
+  width: 5rem;
+  height: 3rem;
+}
+
+.date-cvv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.date-cvv select {
+  width: 6rem;
+  margin-right: 1rem;
+}
+
+/* ##################################################################################### */
+/* =========== Media Query CSS ============= */
+
+@media screen and (min-width: 820px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  li {
+    margin: 0 1.5rem;
+    font-size: 16px;
+  }
+
+  .name label,
+  .address label,
+  .address-text label,
+  .contact label,
+  .password label,
+  .country label {
+    display: initial;
+    width: 10rem;
+    margin-left: 1rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .next {
+    margin-right: 2rem;
+  }
+  /* ######################### Page 1 Media Query CSS ###################### */
+
+  .page-one {
+    margin: 0 5rem;
+  }
+
+  .page-one fieldset {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+  }
+
+  .country {
+    justify-content: flex-start;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  textarea {
+    display: inline;
+    width: 100%;
+  }
+
+  .profil-desc p {
+    display: inline;
+    width: 100%;
+    font-style: italic;
+  }
+
+  .profil-desc div {
+    flex-direction: column;
+    width: 30%;
+    align-items: flex-start;
+    margin-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  fieldset.shipping-address {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  fieldset.next {
+    justify-content: right;
+  }
+
+  /* ######################### Page 2 Media Query CSS ######################### */
+
+  .page-two {
+    margin: 0 5rem;
+  }
+
+  .page-two fieldset {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+  }
+
+  .page-two fieldset div label {
+    width: 15rem;
+  }
+
+  fieldset.password {
+    flex-direction: column;
+  }
+
+  fieldset.password div {
+    justify-content: flex-start;
+  }
+
+  fieldset.newsletter {
+    flex-direction: column;
+  }
+  div.one {
+    justify-content: flex-start;
+  }
+
+  fieldset.next {
+    justify-content: right;
+  }
+
+  /* ######################### Page 3 Media Query CSS ######################### */
+
+  .category {
+    margin: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: none;
+  }
+
+  .category div {
+    width: 40%;
+    justify-content: flex-start;
+  }
+
+  .category div label {
+    width: 7rem;
+  }
+
+  .category input[type="checkbox"] {
+    width: 1rem;
+  }
+
+  /* ######################### Page 4 Media Query CSS ######################### */
+}
