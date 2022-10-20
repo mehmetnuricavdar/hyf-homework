@@ -1,3 +1,7 @@
+/*freecodecamp.org account name: mehmetnuricavdar
+https://www.freecodecamp.org/mehmetnuricavdar
+*/
+
 // Age-ify (A future age calculator)
 
 const yearOfBirth = 1988;
@@ -28,6 +32,8 @@ let wide = null;
 let deep = null;
 let high = null;
 let gardenSizeInM2 = null;
+
+//created a general function for calculations
 
 function volumeInMeters(wide, deep, high) {
   let volumeInMeters = wide * deep * high;
@@ -80,3 +86,38 @@ if (juliaHouse <= 1000000) {
   let difference2 = juliaHouse - 1000000;
   console.log(`Julia you are buying ${difference2} cheaper than market price`);
 }
+
+//Ez Namey (Startup name generator)
+
+let firstWords = [
+  "Easy",
+  "Awesome",
+  "Corporate",
+  "Hyper",
+  "Rocket",
+  "Atom",
+  "Advanced",
+  "Technology",
+  "Active",
+  "Fast",
+];
+let secondWords = [
+  "Solutions",
+  "Thinks",
+  "Gadgets",
+  "Wisdom",
+  "Super",
+  "Fresh",
+  "Network",
+  "Space",
+  "Palace",
+  "Platform",
+];
+let startupName = null;
+const randomNumber = Math.floor(Math.random() * 10);
+
+function startupNameGenerator() {
+  let startupName = firstWords[randomNumber] + " " + secondWords[randomNumber];
+  return startupName;
+}
+console.log(startupNameGenerator(`The startup: ${startupName}`));
