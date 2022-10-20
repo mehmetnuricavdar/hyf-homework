@@ -113,11 +113,9 @@ let secondWords = [
   "Palace",
   "Platform",
 ];
-let startupName = null;
+
 const randomNumber = Math.floor(Math.random() * 10);
 
-function startupNameGenerator() {
-  let startupName = firstWords[randomNumber] + " " + secondWords[randomNumber];
-  return startupName;
-}
-console.log(startupNameGenerator(`The startup: ${startupName}`));
+const startupName = firstWords[randomNumber] + " " + secondWords[randomNumber];
+
+console.log(`The startup: "${startupName}" contains ${startupName.length} characters`);
