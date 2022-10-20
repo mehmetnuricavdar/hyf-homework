@@ -36,12 +36,12 @@ let gardenSizeInM2 = null;
 //created a general function for calculations
 
 function volumeInMeters(wide, deep, high) {
-  let volumeInMeters = wide * deep * high;
+  const volumeInMeters = wide * deep * high;
   return volumeInMeters;
 }
 
 function housePrice(volumeInMeters, gardenSizeInM2) {
-  let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
+  const housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
   return housePrice;
 }
 
@@ -64,12 +64,12 @@ let peterHouse = housePrice(
 );
 
 if (peterHouse <= 2500000) {
-  let difference = 2500000 - peterHouse;
+  const difference = 2500000 - peterHouse;
   console.log(
     `Peter you are buying ${difference} more expensive than market price`
   );
 } else {
-  let difference2 = peterHouse - 2500000;
+  const difference2 = peterHouse - 2500000;
   console.log(`Peter you are buying ${difference2} cheaper than market price`);
 }
 
@@ -92,12 +92,12 @@ let juliaHouse = housePrice(
 );
 
 if (juliaHouse <= 1000000) {
-  let difference = 1000000 - juliaHouse;
+  const difference = 1000000 - juliaHouse;
   console.log(
     `Julia you are buying ${difference} more expensive than market price`
   );
 } else {
-  let difference2 = juliaHouse - 1000000;
+  const difference2 = juliaHouse - 1000000;
   console.log(`Julia you are buying ${difference2} cheaper than market price`);
 }
 
