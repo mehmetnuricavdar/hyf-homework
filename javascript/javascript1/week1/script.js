@@ -54,7 +54,14 @@ let peterHouseDimensions = {
   gardenSizeInM2: 100,
 };
 
-let peterHouse = housePrice(volumeInMeters(8, 10, 10), 100);
+let peterHouse = housePrice(
+  volumeInMeters(
+    peterHouseDimensions.wide,
+    peterHouseDimensions.deep,
+    peterHouseDimensions.high
+  ),
+  peterHouseDimensions.gardenSizeInM2
+);
 
 if (peterHouse <= 2500000) {
   let difference = 2500000 - peterHouse;
@@ -75,7 +82,14 @@ let juliaHouseDimensions = {
   gardenSizeInM2: 70,
 };
 
-let juliaHouse = housePrice(volumeInMeters(5, 11, 8), 70);
+let juliaHouse = housePrice(
+  volumeInMeters(
+    juliaHouseDimensions.wide,
+    juliaHouseDimensions.deep,
+    juliaHouseDimensions.high
+  ),
+  juliaHouseDimensions.gardenSizeInM2
+);
 
 if (juliaHouse <= 1000000) {
   let difference = 1000000 - juliaHouse;
@@ -118,4 +132,6 @@ const randomNumber = Math.floor(Math.random() * 10);
 
 const startupName = firstWords[randomNumber] + " " + secondWords[randomNumber];
 
-console.log(`The startup: "${startupName}" contains ${startupName.length} characters`);
+console.log(
+  `The startup: "${startupName}" contains ${startupName.length} characters`
+);
