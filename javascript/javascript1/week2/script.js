@@ -1,7 +1,7 @@
 // ######    Flight booking fullname function
 
 function getFullname(firstname, surname) {
-  let fullName = `${firstname} ${surname}`;
+  const fullName = `${firstname} ${surname}`;
   return fullName;
 }
 
@@ -11,7 +11,7 @@ let fullname2 = getFullname("Mehmet", "Cavdar");
 // ###### Formal fullname
 
 function getFullname(firstname, surname, useFormalName, gender) {
-  let fullName = `${firstname} ${surname}`;
+  const fullName = `${firstname} ${surname}`;
   if (useFormalName === true) {
     if (gender === "male") {
       return `Lord ${fullName}`;
@@ -22,6 +22,26 @@ function getFullname(firstname, surname, useFormalName, gender) {
     return fullName;
   }
 }
-getFullname("Benjamin", "Hughes", true, "male"); // returns "Lord Benjamin Hughes"`
+getFullname("Benjamin", "Hughes", true, "male"); // returns "Lord Benjamin Hughes"
 getFullname("Benjamin", "Hughes", false); // returns "Benjamin Hughes"
-getFullname("Benjamin", "Hughes", true, "female");
+getFullname("Benjamin", "Hughes", true, "female"); // returns "Lady Benjamin Hughes"
+
+// #####  Event application
+
+function getEventWeekday(futureDays) {
+  const week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let today = new Date().getDate();
+  const eventDate = (today + futureDays) % week.length;
+  return week[eventDate];
+}
+
+console.log(getEventWeekday(2));
+
