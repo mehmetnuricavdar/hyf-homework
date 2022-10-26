@@ -45,3 +45,43 @@ function getEventWeekday(futureDays) {
 
 console.log(getEventWeekday(2));
 
+// ##### Weather wear
+
+function whatToWear(temperature) {
+  const warmDayClothesUp = [
+    "white t-shirt",
+    "blue t-shirt",
+    "black t-shirt",
+    "yellow t-shirt",
+  ];
+  const warmDayClothesDown = [
+    "white short",
+    "black short",
+    "red short",
+    "blue short",
+  ];
+  const coldDayClothesDown = [
+    "white trousers",
+    "black trousers",
+    "red trousers",
+    "blue trousers",
+  ];
+  const coldDayClothesUp = [
+    "white sweater",
+    "black sweater",
+    "red sweater",
+    "blue sweater",
+  ];
+
+  const randomNumber = Math.floor(Math.random() * 3);
+
+  if (temperature < 15) {
+    return `Today weather is cold. You can wear a ${coldDayClothesUp[randomNumber]} and a ${coldDayClothesDown[randomNumber]}`;
+  } else {
+    return `Today weather is nice. You can wear a ${warmDayClothesUp[randomNumber]} and a ${warmDayClothesDown[randomNumber]}`;
+  }
+}
+
+
+// Student manager
+
