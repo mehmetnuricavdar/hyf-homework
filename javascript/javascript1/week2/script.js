@@ -1,3 +1,7 @@
+/*freecodecamp.org account name: mehmetnuricavdar
+https://www.freecodecamp.org/mehmetnuricavdar
+*/
+
 // ######    Flight booking fullname function
 
 function getFullname(firstname, surname) {
