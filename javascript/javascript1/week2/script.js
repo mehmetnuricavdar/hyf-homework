@@ -87,14 +87,18 @@ function whatToWear(temperature) {
 const class23Students = [];
 function addStudentToClass(studentName) {
   // You write code here
-  //   for (let i = 0; i < class23Students.length; i++) {
-  //     if (studentName === class23Students[i]) {
-  //       return `Student ${studentName} is already in the class`;
-  //     }
-  //   }
-  if (class23Students.includes(studentName)) {
-    return `Student ${studentName} is already in the class`;
+  for (let i = 0; i < class23Students.length; i++) {
+    if (studentName === class23Students[i]) {
+      return `Student ${studentName} is already in the class`;
+    }
   }
+  // used "arr.includes()" method for works as same with for loop above
+  /*
+            if (class23Students.includes(studentName)) {
+                return `Student ${studentName} is already in the class`;
+            }
+            */
+
   if (class23Students.length >= 6) {
     if (studentName === "Queen") {
       return class23Students.push(studentName);
@@ -114,3 +118,25 @@ function getNumberOfStudents() {
   // You write code here
   return class23Students.length;
 }
+
+// ###### Candy helper
+const candyPrice = {
+  Sweet: 0.5,
+  Chocolate: 0.7,
+  Toffee: 1.1,
+  ChewingGum: 0.03,
+};
+const boughtCandyPrices = [];
+
+function addCandy(candyType, weight) {
+  return boughtCandyPrices.push(candyPrice[candyType] * weight);
+}
+
+addCandy("Sweet", 20);
+addCandy("Chocolate", 50);
+addCandy("Toffee", 40);
+
+// Couldn't understand the second part of the task
+amountToSpend = Math.random() * 100;
+boughtCandy = [];
+function canBuyMoreCandy() {}
