@@ -4,26 +4,20 @@ https://www.freecodecamp.org/mehmetnuricavdar
 
 // ######    Flight booking fullname function
 
-function getFullname(firstname, surname) {
-  const fullName = `${firstname} ${surname}`;
-  return fullName;
-}
-
-let fullname1 = getFullname("Benjamin", "Hughes");
-let fullname2 = getFullname("Mehmet", "Cavdar");
-
-// ###### Formal fullname
-
 function getFullname(firstname, surname, useFormalName, gender) {
   const fullName = `${firstname} ${surname}`;
-  if (useFormalName === true) {
-    if (gender === "male") {
-      return `Lord ${fullName}`;
+  if (fullName !== " ") {
+    if (useFormalName) {
+      if (gender === "male") {
+        return `Lord ${fullName}`;
+      } else {
+        return `Lady ${fullName}`;
+      }
     } else {
-      return `Lady ${fullName}`;
+      return fullName;
     }
   } else {
-    return fullName;
+    alert("Please enter your name");
   }
 }
 getFullname("Benjamin", "Hughes", true, "male"); // returns "Lord Benjamin Hughes"
@@ -42,12 +36,12 @@ function getEventWeekday(futureDays) {
     "Friday",
     "Saturday",
   ];
-  let today = new Date().getDate();
+  let today = new Date().getDay();
   const eventDate = (today + futureDays) % week.length;
   return week[eventDate];
 }
 
-console.log(getEventWeekday(2));
+getEventWeekday(2);
 
 // ##### Weather wear
 
@@ -125,22 +119,38 @@ function getNumberOfStudents() {
 
 // ###### Candy helper
 const candyPrice = {
-  Sweet: 0.5,
-  Chocolate: 0.7,
-  Toffee: 1.1,
-  ChewingGum: 0.03,
+  sweet: 0.5,
+  chocolate: 0.7,
+  toffee: 1.1,
+  chewingGum: 0.03,
 };
+// adding candies to the array
 const boughtCandyPrices = [];
-
 function addCandy(candyType, weight) {
   return boughtCandyPrices.push(candyPrice[candyType] * weight);
 }
 
-addCandy("Sweet", 20);
-addCandy("Chocolate", 50);
-addCandy("Toffee", 40);
+// calculating how much it costs
+const amountToSpend = Math.floor(Math.random() * 100);
+const boughtCandy = [];
 
-// Couldn't understand the second part of the task
-amountToSpend = Math.random() * 100;
-boughtCandy = [];
-function canBuyMoreCandy() {}
+let sum = 0;
+function sumOfAddCandy() {
+  for (let i = 0; i < boughtCandyPrices.length; i++) {
+    sum = sum + boughtCandyPrices[i];
+  }
+}
+// checking whether can be bought more candies or not
+function canBuyMoreCandy() {
+  if (sum < amountToSpend) {
+    return `You can buy more, so please do!`;
+  } else {
+    return `Enough candy for you!`;
+  }
+}
+
+addCandy("sweet", 10);
+addCandy("chocolate", 5);
+addCandy("toffee", 10);
+
+canBuyMoreCandy();
