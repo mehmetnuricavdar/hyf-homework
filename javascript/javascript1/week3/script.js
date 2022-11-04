@@ -133,7 +133,34 @@ function logOutNotesFormatted() {
   );
 }
 
-logOutNotesFormatted(); // should log out the text below
+logOutNotesFormatted();
 
-// The note with id: 1, has the following note text: Pick up groceries
-// The note with id: 2, has the following note text: Do laundry
+//CactusIO-interactive (Smart phone usage app) optional
+
+const activities = [];
+function addActivity(date, activity, duration) {
+  activities.push({ date: date, activity: activity, duration: duration });
+}
+addActivity("23/7-18", "Youtube", 30);
+
+// ###### Show my status - Usage limit
+
+function showStatus() {
+  const tDuration = 0;
+  const usageLimit = prompt("Please enter your usage limit:");
+
+  activities.forEach(function (i) {
+    tDuration += i.duration;
+  });
+  if (tDuration >= +usageLimit) {
+    console.log(
+      `You have added ${activities.length} activities. They amount to ${tDuration} mins of usage. You have reached your limit, no more smartphoning for you!`
+    );
+  } else {
+    console.log(
+      `You have added ${activities.length} activities. They amount to ${tDuration} min. of usage`
+    );
+  }
+}
+
+showStatus();
