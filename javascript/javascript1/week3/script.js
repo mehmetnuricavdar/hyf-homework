@@ -1,3 +1,7 @@
+/*freecodecamp.org account name: mehmetnuricavdar
+https://www.freecodecamp.org/mehmetnuricavdar
+*/
+
 // ####### Item array removal
 
 const names = [
@@ -32,15 +36,17 @@ const travelInformation = {
   destinationDistance: 432,
 };
 
-function travelTimeCalc(travelInformation) {
-  return travelInformation.destinationDistance / travelInformation.speed;
+function timeToArriveCalc() {
+  const timeTravel =
+    travelInformation.destinationDistance / travelInformation.speed;
+  const timeInHours = Math.floor(timeTravel);
+  const timeInMinutes = Math.floor((timeTravel - timeInHours) * 60);
+  return `You will arrive in ${timeInHours} hours and ${timeInMinutes} minutes`;
 }
 
-const travelTime = travelTimeCalc(travelInformation);
-const travelHours = Math.floor(travelTime);
-const travelMinutes = travelTime - travelHours;
+const travelTime = timeToArriveCalc(travelInformation);
 
-console.log(travelTime); // 8 hours and 38 minutes
+console.log(travelTime);
 
 // ### Series duration of my life
 
