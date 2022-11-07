@@ -15,17 +15,15 @@ const names = [
   "Tala",
 ];
 
-// Write some code here
 function removeName(removalName) {
   for (let i = 0; i < names.length; i++) {
-    if (names[i] === "Ahmad") {
+    if (names[i] === removalName) {
       names.splice(i, 1);
       break;
     }
   }
 }
 removeName("Ahmad");
-// Code done
 
 console.log(names); // ['Peter', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala']
 
@@ -43,10 +41,7 @@ function timeToArriveCalc() {
   const timeInMinutes = Math.floor((timeTravel - timeInHours) * 60);
   return `You will arrive in ${timeInHours} hours and ${timeInMinutes} minutes`;
 }
-
-const travelTime = timeToArriveCalc(travelInformation);
-
-console.log(travelTime);
+timeToArriveCalc(travelInformation);
 
 // ### Series duration of my life
 
@@ -71,10 +66,9 @@ const seriesDurations = [
   },
 ];
 
-let averageLifeSpan = 80 * 365 * 24 * 60;
-let percentageOfTotal = 0;
-
 function logOutSeriesText() {
+  const averageLifeSpan = 80 * 365 * 24 * 60;
+
   for (let i = 0; i < seriesDurations.length; i++) {
     //total duration of the series was calculated as minutes
     (seriesDurations[i].totalDuration =
@@ -97,13 +91,15 @@ function text() {
   lastText();
 }
 function lastText() {
+  let percentageOfTotal = 0;
+
   seriesDurations.map((i) => {
     percentageOfTotal += +i.percentage;
   });
+  console.log(`In total that is ${percentageOfTotal.toFixed(3)}% of my life`);
 }
 
 logOutSeriesText();
-console.log(`In total that is ${percentageOfTotal.toFixed(3)}% of my life`);
 
 // ##### NOnoN0nOYes (Note taking app)
 
