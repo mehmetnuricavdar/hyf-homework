@@ -11,18 +11,26 @@ console.log(minWord);
 
 // ######## 1.2. Find and count the Danish letters
 const danishLetters = ["å", "æ", "ø"];
-const danishString = "Jeg har eåøn blåæ bil";
+const danishString = "Jeg har grød eåøn røde rødeblåæ bil";
+const danishString2 = "Blå grød grød med røde bær";
 
-function findingDanishLetter() {
+function findingDanishLetter(danskString) {
   let total = 0;
-  let letterArray = danishString.split("");
+  let letterArray = danskString.split("");
   let newArray = letterArray.filter((x) => danishLetters.includes(x));
-  const counts = {};
-  newArray.forEach(function (x) {
+  let counts = {};
+  newArray.forEach((x) => {
     counts[x] = (counts[x] || 0) + 1;
   });
+  for (const value of Object.values(counts)) {
+    total += value;
+  }
+  counts = Object.assign({ total: total }, counts);
   console.log(counts);
 }
+
+findingDanishLetter(danishString);
+findingDanishLetter(danishString2);
 
 // ######## 2. Spirit animal name generator
 
