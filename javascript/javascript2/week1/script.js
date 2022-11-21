@@ -273,10 +273,12 @@ myButton.setAttribute("type", "submit");
 myButton.innerHTML = "Find Your Spirit Animal!";
 document.querySelector(".myDiv").appendChild(myButton);
 
+// creating button for call the function when a key pressed
+const myKey = document.querySelector("#presKey");
 //creating function for generating spirit animals
 function spiritAnimalGenerator() {
   const inputValue = document.querySelector("#textArea").value;
-  const spiritAnimal = animals[Math.floor(Math.random() * 223)];
+  const spiritAnimal = animals[Math.floor(Math.random() * animals.length)];
   if (inputValue !== "") {
     const text = document.createElement("p");
     text.innerHTML = `Hi ${inputValue}, your spirit animal is ${spiritAnimal}`;
@@ -294,8 +296,14 @@ myButton.addEventListener("click", function () {
   }
 });
 
-myInput.addEventListener("mouseover", function () {
+myButton.addEventListener("mouseover", function () {
   if (document.querySelector("#onHover").checked) {
+    spiritAnimalGenerator();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (document.querySelector("#pressKey").checked && event.key === "Enter") {
     spiritAnimalGenerator();
   }
 });
