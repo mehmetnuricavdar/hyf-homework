@@ -45563,11 +45563,11 @@
         if (minTitleLength !== "" && maxTitleLength === "") {
           return movie.title.length < minTitleLength;
         } else if (maxTitleLength !== "" && minTitleLength === "") {
-          return i.title.length > maxTitleLength;
+          return movie.title.length > maxTitleLength;
         }
       });
 
-      //    console.log("MOVIES' BY TITLE", titleLength);
+      console.log("MOVIES' BY TITLE", titleLength);
 
       //STEP : 3
       // variables for date filter
@@ -45604,7 +45604,7 @@
         if (ratingScroreNumFrom === "--" && ratingScroreNumTo === "--") {
           const ratingDisplay = document.createElement("div");
           document.body.append(ratingDisplay);
-          ratingDisplay.innerHTML = "<h2>Movies</h2>";
+          ratingDisplay.innerHTML = "<h2>Movies by Ratings</h2>";
           let ratingDisplayMovies = document.createElement("ol");
           ratingDisplay.appendChild(ratingDisplayMovies);
           if (ratingScore === "Bad") {
