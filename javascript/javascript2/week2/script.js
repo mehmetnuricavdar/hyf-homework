@@ -45559,9 +45559,9 @@
         }
       }
       creatingTitlelength();
-      const titleLength = movies.filter((i) => {
+      const titleLength = movies.filter((movie) => {
         if (minTitleLength !== "" && maxTitleLength === "") {
-          return i.title.length < minTitleLength;
+          return movie.title.length < minTitleLength;
         } else if (maxTitleLength !== "" && minTitleLength === "") {
           return i.title.length > maxTitleLength;
         }
@@ -45576,7 +45576,7 @@
       const toDate = document.querySelector("#toDate").value;
 
       const dateFilter = movies.filter(
-        (i) => i.year > fromDate && i.year < toDate
+        (movie) => movie.year > fromDate && movie.year < toDate
       );
       //console.log(dateFilter);
       // STEP: 4
@@ -45589,14 +45589,16 @@
         "#rating-filter-score-to"
       ).value;
       const ratingScroreNum = dateFilter.filter(
-        (i) => i.rating >= ratingScroreNumFrom && i.rating <= ratingScroreNumTo
+        (movie) =>
+          movie.rating >= ratingScroreNumFrom &&
+          movie.rating <= ratingScroreNumTo
       );
 
-      const badRating = dateFilter.filter((i) => i.rating < 4);
+      const badRating = dateFilter.filter((movie) => movie.rating < 4);
       const averageRating = dateFilter.filter(
-        (i) => i.rating >= 4 && i.rating < 7
+        (movie) => movie.rating >= 4 && movie.rating < 7
       );
-      const goodRating = dateFilter.filter((i) => i.rating >= 7);
+      const goodRating = dateFilter.filter((movie) => movie.rating >= 7);
 
       function ratingsFilter() {
         if (ratingScroreNumFrom === "--" && ratingScroreNumTo === "--") {
@@ -45655,7 +45657,7 @@ Count the total number of movies containing
 any of following keywords:Surfer, Alien or Benjamin
  */
 
-  const titleArray = movies.map((i) => i.title); // creating an array for only title
+  const titleArray = movies.map((movie) => movie.title); // creating an array for only title
   const onlyTitleArray = [];
   const toArray = () => {
     for (let i = 0; i < titleArray.length; i++) {
@@ -45704,7 +45706,7 @@ any of following keywords:Surfer, Alien or Benjamin
     let doubleWordsDisplayList = document.createElement("ol");
     doubleWordsDisplay.appendChild(doubleWordsDisplayList);
 
-    const doubleWordsTitles = movies.filter((i) => regex.test(i.title));
+    const doubleWordsTitles = movies.filter((movie) => regex.test(movie.title));
     for (let i = 0; i < doubleWordsTitles.length; i++) {
       let doubleList = document.createElement("li");
       doubleWordsDisplayList.append(doubleList);
@@ -45723,9 +45725,11 @@ any of following keywords:Surfer, Alien or Benjamin
   /*Count the total number of Good, Average and Bad movies using reduce.
  A return could fx be {goodMovies: 33, averageMovies: 45, goodMovies: 123} Optional
  */
-  const badRating = movies.filter((i) => i.rating < 4);
-  const averageRating = movies.filter((i) => i.rating >= 4 && i.rating < 7);
-  const goodRating = movies.filter((i) => i.rating >= 7);
+  const badRating = movies.filter((movie) => movie.rating < 4);
+  const averageRating = movies.filter(
+    (movie) => movie.rating >= 4 && movie.rating < 7
+  );
+  const goodRating = movies.filter((movie) => movie.rating >= 7);
   const countOfMovies = `{goodMovies: ${badRating.length}, averageMovies: ${averageRating.length}, goodMovies: ${goodRating.length}"}`;
   console.log(countOfMovies);
 })();
