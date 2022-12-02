@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+main,
+header {
+  background-color: #ebf6be;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 200%;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+input,
+select,
+button {
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: none;
+  box-sizing: border-box;
+  text-align: center;
+  width: 80px;
+}
+button {
+  width: 50%;
+}
+div {
+  width: 90%;
+  margin: auto;
+}
+.findingWord-div {
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.displayDoubleWord-div {
+  background: #aabccc;
+  padding: 50px;
+}
+
+h2 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0.5em;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript2 Week2 HomeWork</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body><header>    <h1>JavaScript2 Week2 HomeWork</h1>
+</header>
+<main>
+    <form action="" id="filterForm">
+      <label for="title-length"
+        >Filter the listing below by title length less than:
+        <input type="number" id="min-title-length" value="" min="1" max="99" />
+        or bigger than
+        <input type="number" id="max-title-length" value="" min="1" max="99" />
+      </label>
+      <br />
+      <label for="fromDate">From </label>
+      <input
+        id="fromDate"
+        type="number"
+        min="1900"
+        max="2099"
+        step="1"
+        placeholder="Year"
+        value="1980"
+      />
+      <label for="toDate">To </label>
+      <input
+        id="toDate"
+        type="number"
+        min="1900"
+        max="2099"
+        step="1"
+        placeholder="Year"
+        value="1989"
+      />
+      <br />
+      <label for="rating-filter">Filter the listing below by ratings</label>
+      <select name="rating filter" id="rating-filter">
+        <option value="--">--</option>
+        <option value="Good">Good</option>
+        <option value="Average">Average</option>
+        <option value="Bad">Bad</option>
+      </select>
+      <label for="rating-filter-score"
+        >or the listing below by ratings score from
+        <select name="rating filter" id="rating-filter-score-from">
+          <option value="--">--</option>
+
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        to
+        <select name="rating filter" id="rating-filter-score-to">
+          <option value="--">--</option>
+
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select></label
+      >
+    </form>
+    <button>Check Listings</button>
+    </main>
+  </body>
+</html>
