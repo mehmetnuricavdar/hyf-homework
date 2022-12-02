@@ -32,14 +32,14 @@
 
   // ################ 2.1. Filter products
 
-  const filterElements = document.querySelector(".country select");
+  const countrySelector = document.querySelector(".country select");
 
-  filterElements.addEventListener("change", () => {
+  countrySelector.addEventListener("change", () => {
     for (let i = 0; i < listItemsUl.length; i++) {
       let countryValue = listItemsUl[i].children[3].children;
       for (let j = 0; j < countryValue.length; j++) {
         let lowerCountries = countryValue[j].textContent.toLowerCase();
-        if (filterElements.value === lowerCountries) {
+        if (countrySelector.value === lowerCountries) {
           listItemsUl[i].style.display = "";
         } else {
           listItemsUl[i].style.display = "none";
