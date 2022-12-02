@@ -85,11 +85,5 @@ button:active {
 
 h3 {
   text-align: center;
-}
-
-#reStartBtn {
-  display: none;   
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  color: red
 }

@@ -144,7 +144,7 @@
 
   const game = () => {
     const jsConfetti = new JSConfetti();
-    const draw = document.createElement("h3");
+    const message = document.querySelector("#message");
 
     const confettiFunc = async () => {
       await jsConfetti.addConfetti({
@@ -154,17 +154,30 @@
         confettiRadius: 6,
       });
     };
-    let waitTime = secondsInput.value * 1000;
+    let waitTime = secondsInput.value;
+    const countDownGame = () => {
+      const timer = document.querySelector("#message");
+      const downloadTimer = setInterval(function () {
+        waitTime--;
+        timer.textContent = waitTime;
+
+        if (waitTime <= 0) {
+          clearInterval(downloadTimer);
+          timer.textContent = "Time Out!";
+        }
+      }, 1000);
+    };
+    countDownGame();
 
     let totalS = 0;
     let totalL = 0;
     const gameFunc = (event) => {
-      if (event.key === "s") {
+      if (event.key === "s" || event.key === "S") {
         totalS++;
         let textS = document.querySelector("#countS");
         textS.innerHTML = totalS;
       }
-      if (event.key === "l") {
+      if (event.key === "l" || event.key === "L") {
         totalL++;
         let textS = document.querySelector("#countL");
         textS.innerHTML = totalL;
@@ -185,13 +198,9 @@
           document.querySelector("#pressS").innerHTML = "Congratulations";
           confettiFunc();
         } else if (totalL === 0 && totalS === 0) {
-          document.body.append(
-            (draw.innerHTML = "Do you forget to press the keys?")
-          );
+          message.innerHTML = "Do you forget to press the keys?";
         } else {
-          document.body.append(
-            (draw.innerHTML = "No one wins! Let's try again?")
-          );
+          message.innerHTML = "No one wins! Let's try again?";
           document.body.style.backgroundColor = "yellow";
         }
         const reStartBtn = document.querySelector("#reStartBtn");
@@ -201,12 +210,11 @@
       const timer = setTimeout(() => {
         window.removeEventListener("keydown", gameFunc);
         winner();
-      }, waitTime);
+      }, waitTime * 1000);
     } else {
       alert("Please set a time!");
     }
   };
 
   startBtn.addEventListener("click", game);
-  reStartBtn.addEventListener("click", game);
 })();
