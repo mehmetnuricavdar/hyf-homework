@@ -22,6 +22,8 @@ const displayWeather = (data) => {
   document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
   document.querySelector(".wind").innerText =
     "Wind speed: " + Math.floor(speed) + "km/h";
+  document.body.style.backgroundImage =
+    "url('https://source.unsplash.com/1600x900/?" + name + "')";
   const myMap = L.map("myMap").setView([lat, lon], 8);
 
   // creating map
