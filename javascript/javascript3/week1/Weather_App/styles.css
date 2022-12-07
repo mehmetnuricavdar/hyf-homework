@@ -28,7 +28,7 @@ body {
 }
 
 button {
-  margin: 0.5em;
+  margin: 1em;
   border-radius: 50%;
   border: none;
   height: 36px;
@@ -38,7 +38,13 @@ button {
   color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  padding: 0.5em;
+
   border: 1px solid rgb(83, 83, 189);
+}
+
+#current-location {
+  border: none;
 }
 
 button:hover {
@@ -73,7 +79,7 @@ h1.temp {
   align-items: center;
 }
 
-#myMap {
+#map {
   border-radius: 30px;
   width: 100%;
   max-width: 480px;

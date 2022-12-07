@@ -28,14 +28,20 @@
     document.body.style.backgroundImage =
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
 
-    // creating map
-    const attribution =
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-    const tileUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+    // Initialize and add the map
+    function initMap() {
+      const location = { lat: lat, lng: lon };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 4,
+        center: location,
+      });
+      const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+      });
+    }
 
-    const tiles = L.tileLayer(tileUrl, { attribution });
-    const myMap = L.map("myMap").setView([lat, lon], 10);
-    tiles.addTo(myMap);
+    initMap();
   };
 
   const search = () => {
@@ -43,7 +49,7 @@
     fetchWeather(searchValue);
   };
 
-  document.querySelector(".search button").addEventListener("click", search);
+  document.querySelector("#search-button").addEventListener("click", search);
   document.querySelector(".search-bar").addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
       search();
