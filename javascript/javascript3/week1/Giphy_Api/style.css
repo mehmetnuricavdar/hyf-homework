@@ -1,3 +1,9 @@
+:root {
+  --main-bg-color: rgb(225, 132, 163);
+  --main-text-color: #fff;
+  --out-height: 240px;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -5,12 +11,13 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Shadows Into Light", cursive;
-  background-image: url("https://source.unsplash.com/1280x900/?landscape");
+  background-color: var(--main-bg-color);
   font-size: 120%;
   flex-direction: column;
 }
 
-h1 {
+h1,
+h2 {
   font-size: 200%;
 }
 
@@ -21,7 +28,7 @@ h1 {
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
@@ -29,13 +36,14 @@ h1 {
   justify-content: center;
 }
 
-input {
+.search-bar,
+.search-num {
   border: none;
   outline: none;
   padding: 0.4em 1em;
   border-radius: 24px;
   background: #7c7c7c2b;
-  color: white;
+  color: var(--main-text-color);
   font-family: inherit;
   font-size: 105%;
   width: calc(100% - 100px);
@@ -44,31 +52,46 @@ input {
   box-shadow: 3px 3px olive, -1em 0 0.4em rgb(102, 215, 200);
 }
 
+.search-num {
+  width: calc(70% - 100px);
+  margin-top: 2em;
+  box-shadow: -10px 3px 12px olive, 1em 0 0.4em rgb(102, 215, 200);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 button {
   margin: 1em;
   border-radius: 5px;
   border: none;
-  height: 4em;
+  height: 3em;
   width: 10em;
   outline: none;
   background: rgb(26, 144, 186);
-  color: white;
+  color: var(--main-text-color);
   cursor: pointer;
   transition: 0.2s ease-in-out;
   padding: 0.5em;
   box-shadow: 3px 3px 12px rgb(102, 215, 200), -1em 0 0.4em olive;
+  font-family: inherit;
+  font-size: 80%;
+  margin-top: 2em;
 }
 button:hover {
   background: rgb(102, 215, 200);
 }
 .results {
   background: #fbe5e5d0;
-  color: #fff;
-  padding: 2em;
-  border-radius: 30px;
-  height: 10em;
-  width: 100%;
-  max-width: 420px;
+  color: rgb(30, 28, 28);
+  border-radius: 5px;
   margin-top: 2em;
   margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }

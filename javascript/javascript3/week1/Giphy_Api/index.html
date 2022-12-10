@@ -11,15 +11,23 @@
       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
     <title>Giphy Api</title>
   </head>
   <body>
-    <header>    <h1>Giphy Searcher</h1>
-</header>
+    <header><h1>Giphy Searcher</h1></header>
     <div class="search">
       <input type="text" class="search-bar" placeholder="Search for gifs" />
+      <input
+        type="number"
+        class="search-num"
+        placeholder="How many is enough?"
+        min="1"
+        max="50"
+      />
+
       <button type="button" id="">Search</button>
     </div>
-    <div class="results"></div>
+    <div class="out"></div>
   </body>
 </html>
