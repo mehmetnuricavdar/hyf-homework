@@ -1,0 +1,22 @@
+{
+  "self": [
+    {
+      "name": "Apple",
+      "foundation": 1976,
+      "founders": ["Steve Job", "Steve Wozniak"],
+      "CEO": "Tim Cook"
+    },
+    {
+      "name": "Microsoft",
+      "foundation": "1975",
+      "founders": ["Bill Gates", "Paul Allen"],
+      "CEO": "Satya Nadella"
+    },
+    {
+      "countries": [
+        { "name": ["USA", "UK", "Canada"] },
+        { "capitals": ["Washington, DC", "London", "Ottawa"] }
+      ]
+    }
+  ]
+}
