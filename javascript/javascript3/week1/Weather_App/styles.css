@@ -79,10 +79,11 @@ h1.temp {
   align-items: center;
 }
 
-#map {
+#myMap {
   border-radius: 30px;
   width: 100%;
   max-width: 480px;
   margin-bottom: 5em;
   height: 50vh;
+  display: none;
 }

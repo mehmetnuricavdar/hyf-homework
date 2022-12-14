@@ -76,8 +76,9 @@
   };
   // creating search function for event listeners
   const search = () => {
-    const searchValue = document.querySelector(".search-bar").value;
+    let searchValue = document.querySelector(".search-bar").value;
     fetchWeather(searchValue);
+    document.querySelector(".search-bar").value = "";
   };
   // calling functions
   document
