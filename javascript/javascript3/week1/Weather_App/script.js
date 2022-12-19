@@ -37,6 +37,7 @@
       "Sunset: " + moment(sunset * 1000).format("HH:mm a");
 
     document.querySelector("#myMap").style.display = "block";
+    document.querySelector(".search-bar").value = "";
 
     // creating map
     const attribution =
