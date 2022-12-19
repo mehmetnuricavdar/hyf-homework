@@ -78,7 +78,7 @@ select {
   line-height: 40px;
   color: aliceblue;
 }
-span {
+label {
   text-align: end;
   padding-right: 30px;
   height: 100%;
