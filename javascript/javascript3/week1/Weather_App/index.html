@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css?_cacheOverride=1670420459739"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="secret.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <button id="current-location">
+          <i class="material-icons">&#xe569;</i>
+        </button>
+        <input type="text" class="search-bar" placeholder="Search" />
+        <button id="search-button">
+          <i class="material-icons">&#xe8b6;</i>
+        </button>
+      </div>
+      <div class="weather">
+        <h2 class="city"></h2>
+        <h1 class="temp"></h1>
+        <div class="flex">
+          <img src="" alt="" class="icon" />
+          <div class="description"></div>
+        </div>
+        <div class="humidity"></div>
+        <div class="wind"></div>
+        <div class="sunrise"></div>
+
+        <div class="sunset"></div>
+      </div>
+    </div>
+    <div id="myMap"></div>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+  </body>
+</html>
