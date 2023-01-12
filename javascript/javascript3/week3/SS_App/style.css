@@ -1,0 +1,124 @@
+:root {
+  --main-bg-color: rgb(225, 132, 163);
+  --main-text-color: #fff;
+  --out-height: 240px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-family: "Shadows Into Light", cursive;
+  background-color: var(--main-bg-color);
+  font-size: 120%;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  font-size: 200%;
+}
+form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search, .showList {
+  background: #000000d0;
+  color: #fff;
+  padding: 2em;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  overflow: hidden;
+}
+
+.search-bar,
+.title {
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #7c7c7c2b;
+  color: var(--main-text-color);
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 50px);
+  border: 1px solid rgb(26, 144, 186);
+  text-align: center;
+  box-shadow: 3px 3px 12px olive, -1em 0 0.4em rgb(102, 215, 200);
+}
+
+.title {
+  width: calc(70% - 100px);
+  margin-top: 2em;
+  box-shadow: -10px 3px 12px olive, 1em 0 0.4em rgb(102, 215, 200);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.search-bar:focus,
+.title:focus {
+  border-color: #a509ed;
+}
+
+button {
+  margin: 1em;
+  border-radius: 5px;
+  border: none;
+  height: 2em;
+  width: 6em;
+  outline: none;
+  background: rgba(50, 165, 206, 0.746);
+  color: var(--main-text-color);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  box-shadow: 3px 3px 12px olive, -1em 0 0.4em rgb(102, 215, 200);
+  font-family: inherit;
+  font-size: 90%;
+  margin-top: 2em;
+}
+
+#showListBtn {
+  color: #010000f4;
+  background: rgb(244, 244, 126);
+  box-shadow: -10px 3px 12px rgb(248, 248, 54), 1em 0 0.4em rgb(102, 215, 200);
+}
+
+button:hover {
+  background: rgb(102, 215, 200);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.container,
+.results {
+  background: #fbe5e5d0;
+  color: rgb(30, 28, 28);
+  border-radius: 5px;
+  margin-top: 2em;
+  text-align: center;
+}
+
+#deleteBtn {
+  background: rgb(255, 60, 0);
+  box-shadow: 3px 3px 12px rgb(70, 56, 57), -1em 0 0.4em rgb(174, 159, 151);
+}
+
+#saveBtn {
+  background: rgb(234, 237, 28);
+  color: rgb(30, 28, 28);
+  box-shadow: 3px 3px 12px rgb(201, 142, 102), -1em 0 0.4em rgb(221, 161, 129);
+}
