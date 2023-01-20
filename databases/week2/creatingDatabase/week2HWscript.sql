@@ -1,9 +1,9 @@
 CREATE TABLE `customers` (
   `customerID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(255) NOT NULL,
-  `lastName` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL UNIQUE,
-  `phone` varchar(255) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL UNIQUE,
+  `phone` varchar(20) NOT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`customerID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -25,13 +25,13 @@ CREATE TABLE `customerOrder` (
 
 CREATE TABLE `country` (
   `countryID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `countryName` varchar(255) NOT NULL,
+  `countryName` varchar(50) NOT NULL,
   PRIMARY KEY (`countryID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `brand` (
   `brandID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `brandName` varchar(255) NOT NULL,
+  `brandName` varchar(50) NOT NULL,
   `countryID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`brandID`),
  CONSTRAINT `brand_countryID` FOREIGN KEY (`countryID`) REFERENCES `country` (`countryID`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -40,7 +40,7 @@ CREATE TABLE `brand` (
 
 CREATE TABLE `item` (
   `itemID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `itemName` varchar(255) NOT NULL,
+  `itemName` varchar(50) NOT NULL,
   `itemPrice` DECIMAL(10,2) NOT NULL,
   `brandID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`itemID`),
@@ -50,7 +50,7 @@ CREATE TABLE `item` (
 
 CREATE TABLE `city` (
   `cityID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `cityName` varchar(255) NOT NULL,
+  `cityName` varchar(50) NOT NULL,
   `countryID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`cityID`),
   CONSTRAINT `city_countryID` FOREIGN KEY (`countryID`) REFERENCES `country` (`countryID`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -59,7 +59,7 @@ CREATE TABLE `city` (
 
 CREATE TABLE `store` (
   `storeID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `storeName` varchar(255) NOT NULL,
+  `storeName` varchar(50) NOT NULL,
   `cityID` int(10) unsigned NOT NULL,
   `countryID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`storeID`),
@@ -82,8 +82,8 @@ CREATE TABLE `order_item` (
 
 CREATE TABLE `salesAdvisor` (
   `advisorID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `advisorFirstName` varchar(255) NOT NULL,
-  `advisorLastName` varchar(255) NOT NULL,
+  `advisorFirstName` varchar(50) NOT NULL,
+  `advisorLastName` varchar(50) NOT NULL,
   `storeID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`advisorID`),
   CONSTRAINT `salesAdvisor_storeID` FOREIGN KEY (`storeID`) REFERENCES `store` (`storeID`) ON DELETE CASCADE ON UPDATE CASCADE
