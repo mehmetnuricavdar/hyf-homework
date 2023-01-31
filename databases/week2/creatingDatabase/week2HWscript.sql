@@ -1,102 +1,158 @@
-CREATE TABLE `customers` (
-  `customerID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL UNIQUE,
-  `phone` varchar(20) NOT NULL,
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`customerID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `customers`
+  (
+     `customerid` INT(10) UNSIGNED NOT NULL auto_increment,
+     `firstname`  VARCHAR(50) NOT NULL,
+     `lastname`   VARCHAR(50) NOT NULL,
+     `email`      VARCHAR(50) NOT NULL UNIQUE,
+     `phone`      VARCHAR(20) NOT NULL,
+     `createdat`  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+     PRIMARY KEY (`customerid`)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `orders` (
-  `orderID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `order_date` DATE NOT NULL,
-  PRIMARY KEY (`orderID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `orders`
+  (
+     `orderid`   INT(10) UNSIGNED NOT NULL auto_increment,
+     `orderdate` DATE NOT NULL,
+     PRIMARY KEY (`orderid`)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `customerOrder` (
-  `orderID` int(10) unsigned NOT NULL,
-  `customerID` int(10) unsigned NOT NULL,
-  `order_status` ENUM('pending','shipped','delivered','cancelled') NOT NULL DEFAULT 'pending',
-  PRIMARY KEY (`orderID`),
-  CONSTRAINT `customerOrder_customerID` FOREIGN KEY (`customerID`) REFERENCES `customers` (`customerID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `customerOrder_orderID` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `customerorder`
+  (
+     `orderid`     INT(10) UNSIGNED NOT NULL,
+     `customerid`  INT(10) UNSIGNED NOT NULL,
+     `orderstatus` ENUM('pending', 'shipped', 'delivered', 'cancelled') NOT NULL
+     DEFAULT 'pending',
+     PRIMARY KEY (`orderid`),
+     CONSTRAINT `customerorder_customerid` FOREIGN KEY (`customerid`) REFERENCES
+     `customers` (`customerid`) ON DELETE CASCADE ON UPDATE CASCADE,
+     CONSTRAINT `customerorder_orderid` FOREIGN KEY (`orderid`) REFERENCES
+     `orders` (`orderid`) ON DELETE CASCADE ON UPDATE CASCADE
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `country` (
-  `countryID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `countryName` varchar(50) NOT NULL,
-  PRIMARY KEY (`countryID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `country`
+  (
+     `countryid`   INT(10) UNSIGNED NOT NULL auto_increment,
+     `countryname` VARCHAR(50) NOT NULL,
+     PRIMARY KEY (`countryid`)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `brand` (
-  `brandID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `brandName` varchar(50) NOT NULL,
-  `countryID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`brandID`),
- CONSTRAINT `brand_countryID` FOREIGN KEY (`countryID`) REFERENCES `country` (`countryID`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `brand`
+  (
+     `brandid`   INT(10) UNSIGNED NOT NULL auto_increment,
+     `brandname` VARCHAR(50) NOT NULL,
+     `countryid` INT(10) UNSIGNED NOT NULL,
+     PRIMARY KEY (`brandid`),
+     CONSTRAINT `brand_countryid` FOREIGN KEY (`countryid`) REFERENCES `country`
+     (`countryid`) ON DELETE CASCADE ON UPDATE CASCADE
   -- FOREIGN KEY (countryID) REFERENCES country(countryID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `item` (
-  `itemID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `itemName` varchar(50) NOT NULL,
-  `itemPrice` DECIMAL(10,2) NOT NULL,
-  `brandID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`itemID`),
-  CONSTRAINT `item_brandID` FOREIGN KEY (`brandID`) REFERENCES `brand` (`brandID`) ON DELETE CASCADE ON UPDATE CASCADE
- -- FOREIGN KEY (brandID) REFERENCES brand(brandID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `item`
+  (
+     `itemid`    INT(10) UNSIGNED NOT NULL auto_increment,
+     `itemname`  VARCHAR(50) NOT NULL,
+     `itemprice` DECIMAL(10, 2) NOT NULL,
+     `brandid`   INT(10) UNSIGNED NOT NULL,
+     PRIMARY KEY (`itemid`),
+     CONSTRAINT `item_brandid` FOREIGN KEY (`brandid`) REFERENCES `brand` (
+     `brandid`) ON DELETE CASCADE ON UPDATE CASCADE
+  -- FOREIGN KEY (brandID) REFERENCES brand(brandID)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `city` (
-  `cityID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `cityName` varchar(50) NOT NULL,
-  `countryID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`cityID`),
-  CONSTRAINT `city_countryID` FOREIGN KEY (`countryID`) REFERENCES `country` (`countryID`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `city`
+  (
+     `cityid`    INT(10) UNSIGNED NOT NULL auto_increment,
+     `cityname`  VARCHAR(50) NOT NULL,
+     `countryid` INT(10) UNSIGNED NOT NULL,
+     PRIMARY KEY (`cityid`),
+     CONSTRAINT `city_countryid` FOREIGN KEY (`countryid`) REFERENCES `country`
+     (`countryid`) ON DELETE CASCADE ON UPDATE CASCADE
   -- FOREIGN KEY (countryID) REFERENCES country(countryID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `store` (
-  `storeID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `storeName` varchar(50) NOT NULL,
-  `cityID` int(10) unsigned NOT NULL,
-  `countryID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`storeID`),
-  CONSTRAINT `store_countryID` FOREIGN KEY (`countryID`) REFERENCES `country` (`countryID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `store_cityID` FOREIGN KEY (`cityID`) REFERENCES `city` (`cityID`) ON DELETE CASCADE ON UPDATE CASCADE
- -- FOREIGN KEY (countryID) REFERENCES country(countryID),
- -- FOREIGN KEY (cityID) REFERENCES city(cityID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `store`
+  (
+     `storeid`   INT(10) UNSIGNED NOT NULL auto_increment,
+     `storename` VARCHAR(50) NOT NULL,
+     `cityid`    INT(10) UNSIGNED NOT NULL,
+     `countryid` INT(10) UNSIGNED NOT NULL,
+     PRIMARY KEY (`storeid`),
+     CONSTRAINT `store_countryid` FOREIGN KEY (`countryid`) REFERENCES `country`
+     (`countryid`) ON DELETE CASCADE ON UPDATE CASCADE,
+     CONSTRAINT `store_cityid` FOREIGN KEY (`cityid`) REFERENCES `city` (
+     `cityid`) ON DELETE CASCADE ON UPDATE CASCADE
+  -- FOREIGN KEY (countryID) REFERENCES country(countryID),
+  -- FOREIGN KEY (cityID) REFERENCES city(cityID)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `order_item` (
-  `orderID` int(10) unsigned NOT NULL,
-  `itemID` int(10) unsigned NOT NULL,
-  `itemQuantity` int(10) NOT NULL,
-  PRIMARY KEY (`orderID`, `itemID`),
-  CONSTRAINT `order_item_orderID` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `order_item_itemID` FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `orderitem`
+  (
+     `orderid`      INT(10) UNSIGNED NOT NULL,
+     `itemid`       INT(10) UNSIGNED NOT NULL,
+     `itemquantity` INT(10) NOT NULL,
+     PRIMARY KEY (`orderid`, `itemid`),
+     CONSTRAINT `orderitem_orderid` FOREIGN KEY (`orderid`) REFERENCES `orders`
+     (`orderid`) ON DELETE CASCADE ON UPDATE CASCADE,
+     CONSTRAINT `orderitem_itemid` FOREIGN KEY (`itemid`) REFERENCES `item` (
+     `itemid`) ON DELETE CASCADE ON UPDATE CASCADE
   -- FOREIGN KEY (orderID) REFERENCES `order`(orderID)
- -- FOREIGN KEY (itemID) REFERENCES item(itemID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  -- FOREIGN KEY (itemID) REFERENCES item(itemID)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `salesAdvisor` (
-  `advisorID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `advisorFirstName` varchar(50) NOT NULL,
-  `advisorLastName` varchar(50) NOT NULL,
-  `storeID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`advisorID`),
-  CONSTRAINT `salesAdvisor_storeID` FOREIGN KEY (`storeID`) REFERENCES `store` (`storeID`) ON DELETE CASCADE ON UPDATE CASCADE
- -- FOREIGN KEY (storeID) REFERENCES store(storeID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `salesadvisor`
+  (
+     `advisorid`        INT(10) UNSIGNED NOT NULL auto_increment,
+     `advisorfirstname` VARCHAR(50) NOT NULL,
+     `advisorlastname`  VARCHAR(50) NOT NULL,
+     `storeid`          INT(10) UNSIGNED NOT NULL,
+     PRIMARY KEY (`advisorid`),
+     CONSTRAINT `salesadvisor_storeid` FOREIGN KEY (`storeid`) REFERENCES
+     `store` (`storeid`) ON DELETE CASCADE ON UPDATE CASCADE
+  -- FOREIGN KEY (storeID) REFERENCES store(storeID)
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `order_advisor` (
-  `orderID` int(10) unsigned NOT NULL,
-  `advisorID` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`orderID`, `advisorID`),
-  CONSTRAINT `order_advisor_orderId` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `order_advisor_advisorID` FOREIGN KEY (`advisorID`) REFERENCES `salesAdvisor` (`advisorID`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `orderadvisor`
+  (
+     `orderid`   INT(10) UNSIGNED NOT NULL,
+     `advisorid` INT(10) UNSIGNED NOT NULL,
+     PRIMARY KEY (`orderid`, `advisorid`),
+     CONSTRAINT `orderadvisor_orderid` FOREIGN KEY (`orderid`) REFERENCES
+     `orders` (`orderid`) ON DELETE CASCADE ON UPDATE CASCADE,
+     CONSTRAINT `orderadvisor_advisorid` FOREIGN KEY (`advisorid`) REFERENCES
+     `salesadvisor` (`advisorid`) ON DELETE CASCADE ON UPDATE CASCADE
   -- FOREIGN KEY (orderID) REFERENCES `order`(orderID),
   -- FOREIGN KEY (advisorID) REFERENCES salesAdvisor(advisorID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+  )
+engine=innodb
+DEFAULT charset=utf8mb4
+COLLATE=utf8mb4_unicode_ci; 
