@@ -124,5 +124,6 @@
   document.querySelector("#showListBtn").addEventListener("click", (event) => {
     event.preventDefault();
     showCapturedSites();
+    
   });
 })();
