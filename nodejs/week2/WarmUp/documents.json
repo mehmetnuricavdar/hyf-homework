@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Used Apple Airpods",
+    "price": "50",
+    "description": "Battery life is not great"
+  },
+  {
+    "id": 2,
+    "type": "doc",
+    "value": "hello world"
+  },
+  {
+    "id": 3,
+    "name": "Dell XPS 15 Laptop",
+    "price": "2000",
+    "description": "The ultimate laptop for productivity and creativity"
+  },
+  {
+    "id": 4,
+    "name": "Logitech G Pro X Superlight",
+    "price": "150",
+    "description": "The world's lightest wireless gaming mouse"
+  },
+  {
+    "id": 5,
+    "name": "JBL Flip 5",
+    "price": "120",
+    "description": "A portable Bluetooth speaker that delivers surprisingly powerful stereo sound"
+  },
+  {
+    "id": 6,
+    "name": "Nike Air Zoom Pegasus 38",
+    "price": "120",
+    "description": "A lightweight running shoe that delivers responsive and smooth rides"
+  }
+]
