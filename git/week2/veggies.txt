@@ -1,5 +1,7 @@
 1. Carrots
 2. Potato
-3. Tomato
+3. Mushroom
 4. Onions
 5. Broccoli
+6. Lettuce
+7. Capsicum
