@@ -1,5 +1,7 @@
 Potatoes
 Tomatoes
-Lettuce
+Carrots
 Spinach
 Peppers
+Cabbage
+Onions
