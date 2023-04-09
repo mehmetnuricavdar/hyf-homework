@@ -1,10 +1,7 @@
 Potatoes
 Tomatoes
-<<<<<<< HEAD
 Carrots
-=======
 Cauliflower
->>>>>>> git-week2
 Spinach
 Peppers
 Cabbage
